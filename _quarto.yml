@@ -1,0 +1,41 @@
+project:
+  type: book
+
+book:
+  title: "TITLE"
+  author: "AUTHOR"
+  date: today
+  site-url: https://jtr13.github.io/ggwork
+  repo-url: https://github.com/jtr13/ggwork
+  repo-branch: main
+  repo-actions: [source, edit, issue]
+  chapters:
+    - index.qmd
+    - cd_plots.qmd
+    - tidyverse_gallery_scrape.qmd
+    - cran_scrape.qmd
+    - daily_counts_all_packages.qmd
+    
+format:
+  html:
+    theme: [default, style/graphs.scss]
+    code-link: true
+    highlight-style: style/joyce.theme
+    callout-icon: false
+    fig-width: 5
+    fig-height: 4
+    
+knitr:
+  opts_chunk: 
+    fig.align: center
+    out.width: 60%
+    
+    
+execute:
+  echo: true
+  warning: false
+  message: false
+  error: true
+
+editor: source
+
