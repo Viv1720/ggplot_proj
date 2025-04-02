@@ -5,6 +5,8 @@ execute:
 
 # Appendix A: Tidyverse Gallery Scrape
 
+Not running!
+
 The following code is designed to scrape the names of packages in the ggplot environment from the tidyverse gallery (https://exts.ggplot2.tidyverse.org/gallery/) and then retrieve the cumulative historical cran download count for each. It also scrapes the github star count listed for these packages.
 
 First import the necessary packages:
