@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jtr13.github.io/ggwork/index.html</loc>
-    <lastmod>2025-04-07T14:50:54.162Z</lastmod>
+    <lastmod>2025-04-07T16:46:23.558Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/ggwork/github_intro.html</loc>
@@ -10,18 +10,26 @@
   </url>
   <url>
     <loc>https://jtr13.github.io/ggwork/tidyverse_gallery_scrape.html</loc>
-    <lastmod>2025-04-07T15:03:03.930Z</lastmod>
+    <lastmod>2025-04-07T15:14:18.491Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/ggwork/cran_scrape.html</loc>
-    <lastmod>2025-04-07T15:07:58.640Z</lastmod>
+    <lastmod>2025-04-07T15:14:08.751Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/ggwork/daily_counts_all_packages.html</loc>
-    <lastmod>2025-04-02T16:31:17.087Z</lastmod>
+    <lastmod>2025-04-07T15:14:01.603Z</lastmod>
   </url>
   <url>
     <loc>https://jtr13.github.io/ggwork/cd_plots.html</loc>
     <lastmod>2025-04-02T16:31:16.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jtr13.github.io/ggwork/exploring_packages.html</loc>
+    <lastmod>2025-04-07T16:22:02.096Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jtr13.github.io/ggwork/conclusion.html</loc>
+    <lastmod>2025-04-07T15:28:02.106Z</lastmod>
   </url>
 </urlset>

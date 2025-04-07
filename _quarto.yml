@@ -16,6 +16,8 @@ book:
     - cran_scrape.qmd
     - daily_counts_all_packages.qmd
     - cd_plots.qmd
+    - exploring_packages.qmd
+    - conclusion.qmd
     
 format:
   html:

@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -137,13 +171,25 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./daily_counts_all_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Appendix C: Daily Download Counts for All Packages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Daily Download Counts for All Packages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cd_plots.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plots to Visualize Download Trends</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exploring_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exploring Packages</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
     </ul>
@@ -197,8 +243,31 @@ ul.task-list li input[type="checkbox"] {
 <section id="introduction" class="level1 unnumbered">
 <h1 class="unnumbered">Introduction</h1>
 <p>Overview of the ggplot2 package and what it does. Explanation of grammar of graphics and its layering characteristics. Include a short example script.</p>
-<p>Objective of this project in mapping out the environment. Overview of the following sections.</p>
+<p>Objective of this project in identifying packages and mapping out the environment. ***Overview of the following sections.</p>
 <p>Future directions.</p>
+<hr>
+<p>The ggplot2 package is a powerful tool for data visualization in R, built on the principles of the Grammar of Graphics. ggplot2 facilitates the layering of independent components to build up plots step by step, offering a high degree of customization.</p>
+<p>The Grammar of Graphics, as implemented by ggplot2, breaks down plots into components such as scales (mapping data to aesthetics), geoms (geometric objects), stats (statistical transformations), and facets (panels). This approach enables users to structurally layer these components to build up the final plot. For example, a user can start by defining the data and aesthetics (aes), add layers of geoms for different data representations, and further refine the plot with scales and themes.</p>
+<p>Here’s a brief example to illustrate how ggplot2 is used:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy, <span class="at">colour =</span> class)) <span class="sc">+</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_brewer</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Many packages have been developed to extend the functionality of ggplot2, enhancing its capabilities and ease of use. These extensions are available publicly and contribute to a large ecosystem around ggplot2. Examples include ggmap for integrating maps into graphics, patchwork for arranging multiple plots, and ggthemes for new theme and scale options. This environment fosters continuous and openly communicated innovation.</p>
+<p>The objective of this project was to explore the vast ecosystem surrounding the ggplot2 package, focusing on identifying and cataloging the various package extensions that enhance or complement its functionality. The first phase involved gathering and collecting download data for (to assess popularity) packages within the ggplot2 ecosystem. Subsequently, I began to explore and categorize these packages to demonstrate how they support data visualization tasks.</p>
+<p>This project also served as an opportunity to learn and refine practical skills in managing a project. I learned to utilized tools such as GitHub for version control and how to organize scripts and code effectively. By actively using ggplot2 and its principles throughout the project, I was able to enhance my data visualization skills, creating detailed graphical representations of data.</p>
+<p>Looking ahead, the next steps for this project involve a more complete mapping of the ggplot2 ecosystem, identifying and classifying all packages and exploring trends in data visualization that could further enhance functionality and user experience. This comprehensive mapping will provide a more robust starting point and framework for users to find tools for their specific data visualization needs.</p>
+<p>This ongoing work will continue to enrich the community’s resources and foster an environment of continued innovation and collaboration in data visualization.</p>
 
 
 </section>

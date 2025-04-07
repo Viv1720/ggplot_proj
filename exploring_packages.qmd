@@ -1,0 +1,5 @@
+# Exploring Packages
+
+Start work on categorizing packages, e.g., in/out of grammar, what the packages does (geoms, scales, themes, etc.)
+
+Provide example scripts and visualizations for interesting packages
