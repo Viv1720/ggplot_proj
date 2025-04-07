@@ -11,10 +11,11 @@ book:
   repo-actions: [source, edit, issue]
   chapters:
     - index.qmd
-    - cd_plots.qmd
+    - github_intro.qmd
     - tidyverse_gallery_scrape.qmd
     - cran_scrape.qmd
     - daily_counts_all_packages.qmd
+    - cd_plots.qmd
     
 format:
   html:

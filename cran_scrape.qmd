@@ -3,9 +3,13 @@ execute:
   eval: false
 ---
 
-# Appendix B: CRAN Packages Webpage Scrape
+# CRAN Packages Webpage Scrape
 
-The following code is designed to scrape the names of packages in the ggplot environment from the CRAN page (https://cran.r-project.org/web/packages/available_packages_by_name.html) to then retrieve the cumulative historical cran download count for each.
+The following code does not run here due to time consumption. The generated data is timestamped with a data collection time produced from local R scripts that are pushed up to Github.
+
+The below walks through a script designed to scrape the names of packages in the ggplot environment from the CRAN page (https://cran.r-project.org/web/packages/available_packages_by_name.html) to then retrieve the cumulative historical cran download count for each.
+
+Finally, the scraped data here is merged with the tidyverse gallery data generated from the previous chapter.
 
 First import the necessary packages:
 
@@ -180,7 +184,7 @@ data_lines <- format_csv(cran_packages)
 write_lines(c(timestamp, data_lines), "generated_data/cran_packages.csv")
 ```
 
-Read in and merge the data on ggplot packages from the gallery and from the cran webpage to store in a new dataframe, packages.
+Read in and merge the data on ggplot packages from the tidyverse gallery and from the cran webpage to store in a new dataframe, packages.
 
 ```{r}
 gallery_packages <- read_csv("generated_data/gallery_packages.csv", skip = 1)
@@ -204,4 +208,16 @@ cran_ts <- readLines("generated_data/cran_packages.csv", n = 1)
 data_lines <- format_csv(sorted_packages)
 
 write_lines(c(gallery_ts, cran_ts, data_lines), "generated_data/all_packages.csv")
+```
+
+In practice, the above code is run on a local R script to prevent repetitive time consumption. The data on all ggplot2 environment packages can be read in as below.
+
+```{r}
+#| eval: true
+library(tidyverse)
+
+#read in data, skipping timestamp
+all_packages <- read.csv("generated_data/all_packages.csv", skip = 2)
+
+head(all_packages)
 ```

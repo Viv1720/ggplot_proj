@@ -3,11 +3,11 @@ execute:
   eval: false
 ---
 
-# Appendix A: Tidyverse Gallery Scrape
+# Tidyverse Gallery Scrape
 
-Not running!
+The following code does not run here due to time consumption. The generated data is timestamped with a data collection time produced from local R scripts that are pushed up to Github.
 
-The following code is designed to scrape the names of packages in the ggplot environment from the tidyverse gallery (https://exts.ggplot2.tidyverse.org/gallery/) and then retrieve the cumulative historical cran download count for each. It also scrapes the github star count listed for these packages.
+The below walks through a script designed to scrape the names of packages in the ggplot environment from the tidyverse gallery (https://exts.ggplot2.tidyverse.org/gallery/) and then retrieve the cumulative historical cran download count for each. It also scrapes the github star count listed for these packages.
 
 First import the necessary packages:
 
@@ -84,12 +84,22 @@ Store data in a new dataframe with a column indicating gallery as the source and
 ```{r}
 gallery_packages$gallery = TRUE
 
-head(gallery_packages)
-
 timestamp <- paste("# Gallery data generated on:", Sys.time())
 
 data_lines <- format_csv(gallery_packages)
 
 # Combine and write
 write_lines(c(timestamp, data_lines), "generated_data/gallery_packages.csv")
+```
+
+In practice, the above code is run on a local R script to prevent repetitive time consumption. The data can be read in as below.
+
+```{r}
+#| eval: true
+library(tidyverse)
+
+#read in data, skipping timestamp
+gallery_packages <- read.csv("generated_data/gallery_packages.csv", skip = 1)
+
+head(gallery_packages)
 ```

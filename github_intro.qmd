@@ -1,0 +1,11 @@
+# Introduction to Github
+
+Walk through what I've learned in a step by step instructions format.
+
+Overview of Github, what it is and why people use it
+
+Steps to set up Github to connect with local RStudio.
+
+Steps to fork and pull request with other people's repos. Conventions with branching and updating fork.
+
+How Github will tie into my future work.

@@ -1,6 +1,10 @@
 # Introduction {.unnumbered}
 
+Overview of the ggplot2 package and what it does.
+Explanation of grammar of graphics and its layering characteristics.
+Include a short example script.
 
-```{r}
-writeLines("This is a test.", con = "test.txt")
-```
+Objective of this project in mapping out the environment.
+Overview of the following sections.
+
+Future directions.

@@ -3,9 +3,11 @@ execute:
   eval: false
 ---
 
-# Appendix C: Daily Download Counts for All Packages
+# Daily Download Counts for All Packages
 
-The following code is designed to generate daily download count data for identified packages in the previously generated all_packages file to utilize in creating plots.
+The following code does not run here due to time consumption. The generated data is timestamped with a data collection time and produced from local R scripts that are pushed up to Github.
+
+The below walks through a script designed to generate daily download count data for identified packages in the previously generated all_packages file to utilize in creating plots.
 
 First import the necessary packages.
 
