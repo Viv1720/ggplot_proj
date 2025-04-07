@@ -5,7 +5,7 @@ Explanation of grammar of graphics and its layering characteristics.
 Include a short example script.
 
 Objective of this project in identifying packages and mapping out the environment.
-***Overview of the following sections.
+**Overview of the following sections.
 
 Future directions.
 
