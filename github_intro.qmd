@@ -1,3 +1,8 @@
+---
+execute:
+  eval: false
+---
+
 # Introduction to Github
 
 Walk through what I've learned in a step by step instructions format.
@@ -9,3 +14,101 @@ Steps to set up Github to connect with local RStudio.
 Steps to fork and pull request with other people's repos. Conventions with branching and updating fork.
 
 How Github will tie into my future work.
+
+-----
+
+## Install Git
+
+Check if Git is already installed
+
+1. Open **terminal/shell**.
+2. Type the following commands:
+
+```bash
+which git
+```
+and
+```bash
+git --version
+```
+
+3. If there see a path (e.g., `/usr/bin/git`) and a version number, Git is already installed.
+
+If the output is something like `git: command not found`, Git must be installed following the below.
+
+### Windows
+
+Download and install Git for Windows here: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+### macOS
+
+1. Open the terminal.
+2. Type either of the following commands to prompt an offer to install:
+```bash
+git --version
+```
+or
+```bash
+git config
+```
+Accept the prompt and click "install."
+
+3. Or request installation with
+```bash
+xcode-select --install
+```
+
+## Connect GitHub account to local
+
+Must connect GitHub account for Git to associate commits with the correct name and email.
+
+1. Open terminal/shell.
+2. Set name and email (replace with individual GitHub info):
+
+```bash
+git config --global user.name "Jane Doe"
+git config --global user.email "jane@example.com"
+git config --global --list
+```
+3. Confirm that it worked with
+
+```bash
+git config --global --list
+```
+
+## Set Up HTTPS Personal Access Token
+
+When interacting with GitHub, Git needs to verify identity. This requires credentials, and GitHub now requires a Personal Access Token (PAT).
+
+### Generate PAT
+
+Option 1: In browser
+
+1. Go to: [https://github.com/settings/tokens](https://github.com/settings/tokens)
+2. Click "Generate token"
+3. Choose scopes (recommended: `repo`, `user`, `workflow`)
+4. Click "Generate token" again
+5. Copy the generated token (starts with `ghp_...`)
+
+Option 2: From R
+
+```{r}
+usethis::create_github_token()
+```
+
+### Set and Save PAT
+
+In R, call
+```{r}
+gitcreds::gitcreds_set()
+```
+
+Paste the PAT in response to the console output:
+```{r}
+? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+-> Adding new credentials...
+-> Removing credentials from cache...
+-> Done.
+```
+
+

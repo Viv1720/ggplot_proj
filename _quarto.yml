@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "TITLE"
-  author: "AUTHOR"
+  title: "ggplot2 Project"
+  author: "Vivian Zheng"
   date: today
   site-url: https://jtr13.github.io/ggwork
   repo-url: https://github.com/jtr13/ggwork

@@ -21,7 +21,7 @@ library(ggplot2)
 
 ggplot(mpg, aes(displ, hwy, colour = class)) + 
   geom_point() +
-  scale_colour_brewer()
+  scale_fill_discrete()
 ```
 
 Many packages have been developed to extend the functionality of ggplot2, enhancing its capabilities and ease of use. These extensions are available publicly and contribute to a large ecosystem around ggplot2. Examples include ggmap for integrating maps into graphics, patchwork for arranging multiple plots, and ggthemes for new theme and scale options. This environment fosters continuous and openly communicated innovation.
