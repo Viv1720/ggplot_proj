@@ -11,7 +11,7 @@ Future directions.
 
 ---
 
-The ggplot2 package is a powerful tool for data visualization in R, built on the principles of the Grammar of Graphics. ggplot2 facilitates the layering of independent components to build up plots step by step, offering a high degree of customization.
+The ggplot2 package is a powerful tool for data visualization in R, built on the principles of the Grammar of Graphics[^1]. ggplot2 facilitates the layering of independent components to build up plots step by step, offering a high degree of customization.
 
 The Grammar of Graphics, as implemented by ggplot2, breaks down plots into components such as scales (mapping data to aesthetics), geoms (geometric objects), stats (statistical transformations), and facets (panels). This approach enables users to structurally layer these components to build up the final plot. For example, a user can start by defining the data and aesthetics (aes), add layers of geoms for different data representations, and further refine the plot with scales and themes.
 
@@ -33,4 +33,7 @@ This project also served as an opportunity to learn and refine practical skills 
 Looking ahead, the next steps for this project involve a more complete mapping of the ggplot2 ecosystem, identifying and classifying all packages and exploring trends in data visualization that could further enhance functionality and user experience. This comprehensive mapping will provide a more robust starting point and framework for users to find tools for their specific data visualization needs.
 
 This ongoing work will continue to enrich the community's resources and foster an environment of continued innovation and collaboration in data visualization.
+
+[^1] https://ggplot2.tidyverse.org/
+[^2]
 
